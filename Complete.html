@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Diecast Model Store</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#111;
+color:white;
+}
+
+/* LOGIN PAGE */
+
+#loginPage{
+background:url("https://images.unsplash.com/photo-1511919884226-fd3cad34687c");
+background-size:cover;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.login-box{
+background:rgba(0,0,0,0.8);
+padding:40px;
+border-radius:10px;
+text-align:center;
+width:300px;
+}
+
+.login-box h2{
+color:gold;
+}
+
+.login-box input{
+width:90%;
+padding:10px;
+margin:10px;
+border-radius:5px;
+border:none;
+}
+
+.login-box button{
+background:gold;
+border:none;
+padding:10px 20px;
+cursor:pointer;
+border-radius:5px;
+}
+
+/* HOME PAGE */
+
+#homePage{
+display:none;
+}
+
+header{
+background:black;
+padding:20px;
+text-align:center;
+font-size:35px;
+color:gold;
+}
+
+.container{
+padding:40px;
+}
+
+.products{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+}
+
+.card{
+background:#1c1c1c;
+width:250px;
+padding:15px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 0 10px black;
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+.price{
+color:gold;
+font-size:20px;
+margin:10px;
+}
+
+.card button{
+background:orange;
+border:none;
+padding:10px 20px;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* ORDER PAGE */
+
+#orderPage{
+display:none;
+background:url("https://images.unsplash.com/photo-1503376780353-7e6692767b70");
+background-size:cover;
+height:100vh;
+}
+
+.order-box{
+width:400px;
+background:rgba(0,0,0,0.8);
+margin:auto;
+margin-top:80px;
+padding:30px;
+border-radius:10px;
+}
+
+.order-box h2{
+text-align:center;
+color:gold;
+}
+
+.order-box input,
+.order-box select{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+.order-box button{
+width:100%;
+background:gold;
+padding:12px;
+font-size:16px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+
+<div id="loginPage">
+
+<div class="login-box">
+
+<h2>Diecast Model Login</h2>
+
+<input type="text" placeholder="Username">
+
+<input type="password" placeholder="Password">
+
+<br>
+
+<button onclick="login()">Login</button>
+
+</div>
+
+</div>
+
+<!-- HOME PAGE -->
+
+<div id="homePage">
+
+<header>🔥 Diecast Model Collection</header>
+
+<div class="container">
+
+<div class="products">
+
+<div class="card">
+
+<img src="https://cdn.pixabay.com/photo/2017/03/27/13/45/ferrari-2179220_1280.jpg">
+
+<h3>Ferrari Model</h3>
+
+<div class="price">₹2500</div>
+
+<button onclick="order('Ferrari Model')">Order</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://cdn.pixabay.com/photo/2016/04/01/12/11/lamborghini-1305173_1280.jpg">
+
+<h3>Lamborghini Model</h3>
+
+<div class="price">₹3000</div>
+
+<button onclick="order('Lamborghini Model')">Order</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://cdn.pixabay.com/photo/2016/11/18/12/54/auto-1834273_1280.jpg">
+
+<h3>Camaro Model</h3>
+
+<div class="price">₹2200</div>
+
+<button onclick="order('Camaro Model')">Order</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/auto-1868726_1280.jpg">
+
+<h3>Nissan GTR Model</h3>
+
+<div class="price">₹2800</div>
+
+<button onclick="order('Nissan GTR Model')">Order</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ORDER PAGE -->
+
+<div id="orderPage">
+
+<div class="order-box">
+
+<h2>Place Your Order</h2>
+
+<input type="text" placeholder="Name">
+
+<input type="text" placeholder="Phone">
+
+<input type="text" placeholder="Address">
+
+<select id="carName">
+
+<option>Select Car</option>
+<option>Ferrari Model</option>
+<option>Lamborghini Model</option>
+<option>Camaro Model</option>
+<option>Nissan GTR Model</option>
+
+</select>
+
+<input type="number" placeholder="Quantity">
+
+<button onclick="placeOrder()">Place Order</button>
+
+</div>
+
+</div>
+
+<script>
+
+function login(){
+
+document.getElementById("loginPage").style.display="none";
+document.getElementById("homePage").style.display="block";
+
+}
+
+function order(car){
+
+document.getElementById("homePage").style.display="none";
+document.getElementById("orderPage").style.display="block";
+
+document.getElementById("carName").value=car;
+
+}
+
+function placeOrder(){
+
+alert("✅ Order Placed Successfully!");
+
+location.reload();
+
+}
+
+</script>
+
+</body>
+</html>
